@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto:ital,wght@1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!--  ICONS -->
+    <script
+      src="https://kit.fontawesome.com/f18258d9e9.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+ 
+  <body>
+    <header>
+      <h1>Dev. Letícia</h1>
+ 
+      <nav>
+        <span id="frase" style="margin-right: 5px;"></span> 
+        <a href="https://github.com/salesleticia" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://contate.me/leehsales" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </nav>
+      <!-- frase do forge aqui -->
+      <!--     import axios from "axios"
+ 
+        (async () => {
+        let endpoint = "https://forgeware.withub.ai/api/bot/crawler/641b36b723f25a6c36900590"
+        const results = await axios.post(endpoint,
+            {inputData: {}},
+            {
+            headers: {
+            "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d",
+            "Content-Type": "application/json"
+            }
+            }
+        )
+        })() -->
+    </header>
+ 
+    <main>
+      <section class="main-content">
+        <article class="text">
+          <h2>Sobre mim🤔</h2>
+          <p>
+            Olá, me chamo Letícia Sales, tenho 17 anos. Sou de Belo Horizonte,
+            Minas Gerais. Eu gosto de trabalhar, viajar e estar com minha
+            família. Sou uma pessoa super carinhosa, responsável e amigável nas
+            horas vagas gosto de estar presente e próxima da minha filha. Estou
+            disposta a fazer parte dessa maravilhosa empresa, agregar e ajudar
+            com tudo o que precisarem.
+          </p>
+        </article>
+ 
+        <aside class="techs">
+          <h2>👨‍💻 Tecnologias</h2>
+ 
+          <div class="cards-container">
+            <div class="card">
+              <img src="./img/techs/html logo.png" alt="Logo do HTML5" />
+            </div>
+ 
+            <div class="card">
+              <img src="./img/techs/css logo.png" alt="Logo do CSS3" />
+            </div>
+ 
+            <div class="card">
+              <img
+                src="./img/techs/javascript logo.png"
+                alt="Logo do JavaScript"
+              />
+            </div>
+ 
+            <div class="card">
+              <img src="./img/techs/python.png" alt="Logo do Python" />
+            </div>
+          </div>
+        </aside>
+      </section>
+ 
+      <figure>
+        <img
+          src="./img/WhatsApp Image 2023-03-11 at 11.27.36.jpeg"
+          alt="Imagem de Letícia Sales"
+        />
+        <figcaption>Letícia Sales De Freitas</figcaption>
+      </figure>
+    </main>
+ 
+    <footer>
+      <spam>
+        &copy; Letícia Sales De Freitas, 2023 - Todos os direitos reservados.
+      </spam>
+    </footer>
+    <script>
+      async function pegarFrase() {
+        const response = await fetch(
+          "https://forgeware.withub.ai/api/bot/crawler/641b36b723f25a6c36900590",
+          {
+            headers: {
+              "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d",
+              "Content-Type": "application/json",
+            },
+            body: '{"inputData":{},"builderFlowNodeId":"","isOnly":false}',
+            method: "POST",
+          }
+        );
+ 
+        const responseData = await response.json()
+ 
+        document.querySelector("#frase").innerHTML = responseData.data.frase
+      }
+ 
+      pegarFrase()
+    </script>
+  </body>
+</html>
