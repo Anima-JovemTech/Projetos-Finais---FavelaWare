@@ -1,0 +1,21 @@
+body{
+    background: rgb(118,171,223);
+}
+h1{
+    text-align: right;
+    font-size: xx-large;
+}
+main{
+    text-align: center;
+    position:absolute;
+    top: 10%;
+    left: 40%;
+}
+div{
+    text-align: right;
+    padding-right: 40%;
+    font-size: 120%;
+}
+button{
+    text-align: center;
+}

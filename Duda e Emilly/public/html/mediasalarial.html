@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/mediasalaria.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-brand bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Projeto</a>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav">        
+        <a id="home"class="nav-link active" aria-current="page" href="#">Home</a>                
+        <a id="candidato"class="nav-link" href="candidato.html">Candidato</a>  
+<<<<<<< Updated upstream
+        <a id="candidato"class="nav-link" href="home.html">Home</a> 
+        <a id="empresa"class="nav-link" href="/public/html/mediasalarial.html">Média Salarial</a>
+=======
+        <a id="empresa"class="nav-link" href="empresa.html">Empresa</a>
+        <a id="empresa"class="nav-link" href="mediasalarial.html">Média Salarial</a>
+>>>>>>> Stashed changes
+                       
+          
+    </ul>
+  </div>
+
+  <ul class="navbar-nav">        
+    <a id="home"class="nav-link active" aria-current="page" href="#">Home</a>                
+    <a id="candidato"class="nav-link" href="candidato.html">Candidato</a>  
+    <a id="empresa"class="nav-link" href="/public/html/mediasalarial.html">Média Salarial</a>
+                   
+      
+</ul>
+
+
+  <nav>
+
+      <main>
+
+        <h1 class="titulo">Digite um emprego para saber a média salarial</h1>
+
+        <form class="form-inline" onsu bmit="searchSalary(event)">
+          <div class="form-group mx-sm-6 mb-7">
+            <input class="form-control form-control-lg" id="cargo" type="text" placeholder="Digite um cargo">
+          </div>
+          <button id='buscar' class="btn btn-primary mb-10">Buscar</button>
+        </form>
+        
+      </main>
+      <script>
+        async function searchSalary(e) {
+          e.preventDefault()
+
+          const profissao = document.querySelector("#cargo").value
+
+          const response = await fetch("https://forgeware.withub.ai/api/bot/crawler/64282273869a3f26010c9238", {
+            "headers": {
+              "Content-Type": " application/json",
+              "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d"
+            },
+            "body": JSON.stringify({ inputData: { cargo: profissao } }),
+            "method": "POST"
+          });
+
+          const body = await response.json()
+
+          console.log(body.data)
+          document.querySelector("#salario").innerHTML=body.data.mediasalarial
+
+        }
+
+
+      </script>
+
+</body>
